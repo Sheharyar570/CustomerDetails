@@ -1,0 +1,76 @@
+.heading-div {
+    text-align: center;
+    font-size: 1.25em;
+}
+.heading-div h2 {
+    border-bottom: 1px solid grey;
+}
+.container-wrapper {
+    width: 90%;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.3);
+}   
+
+.container {
+    width: 95%;
+    height: 75%;
+    margin: 0 auto;
+    overflow-y: scroll;
+    border: 1px solid black;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.3);
+}
+
+#filter-form {
+    float: right;
+    margin-bottom: 5px;
+    margin-right: 3%;    
+}
+
+#filter-form form {
+    display: inline;
+}
+
+#filter-form input[type="number"] {
+    width: 250px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+#filter-form button, 
+#filter-form input[type="submit"] {
+    width: 100px;
+    height: 35px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    background-color: #04AA6D;
+}
+
+#filter-form button:hover,
+#filter-form input[type="submit"] {
+    cursor: pointer
+}
+
+
+#customer-data-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+#customer-data-table th,
+ #customer-data-table td{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customer-data-table tr:nth-child(even){ background-color: #f2f2f2;}
+
+#customer-data-table th {
+    background-color: #04AA6D;  
+    color: white;
+}

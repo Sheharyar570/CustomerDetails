@@ -6,11 +6,17 @@ import os
 
 class Command(BaseCommand):
 
-    def handle(self, *args, **options):
-        customers = []
-        customer_data = pd.read_csv(os.path.join( BASE_DIR, 'customers.csv' ) ) # read customer data from customers.csv
+    def add_arguments(self, parser):
+            parser.add_argument('file_path', type=str, help="File path to import")
 
-        # create a new Customer model class object for each row in customers.csv
+
+    def handle(self, *args, **kwargs):
+        file_path = kwargs['file_path'] #postional argument
+        customers = []
+        customer_data = pd.read_csv( file_path ) # read customer data from customers.csv
+       
+        
+        # create a new Customer model class object for each row in .csv file
         for i in range(0, customer_data.shape[0]):
             customers.append(
                 Customers(

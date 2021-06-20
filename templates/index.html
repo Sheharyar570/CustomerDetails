@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <div class="container-wrapper">
+        <div class="heading-div">
+            <h2>Customer Details</h2>  
+        </div>
+        
+        <div id="filter-form">
+            <form method="GET" action="{% url 'index' %}"   >
+                {% csrf_token %}
+                Filter: <input min="1" type="number" name="customer_id" placeholder="Enter Customer ID"> <input type="submit" name="submit" value="Search">
+            </form>
+            <form method="GET" action="{% url 'index' %}"   >
+                {% csrf_token %}
+                <button type="submit" name="show_all" value="show_all">Show All</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <table id="customer-data-table">
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Company</th>
+                    <th>City</th>
+                    <th>Title</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                </tr>
+                    <!-- Run this block if Show All button is clicked. -->
+                    {% if search_type == 'show_all' %}
+                        {% for customer in data %}
+                            <tr>
+                                <td>{{customer.id}}</td>
+                                <td>{{customer.first_name}}</td>
+                                <td>{{customer.last_name}}</td>
+                                <td>{{customer.email}}</td>
+                                <td>{{customer.gender}}</td>
+                                <td>{{customer.company}}</td>
+                                <td>{{customer.city}}</td>
+                                <td>{{customer.title}}</td>
+                                <td>{{customer.lat}}</td>
+                                <td>{{customer.lon}}</td>
+                            </tr>    
+                        {% endfor %}
+
+                    <!-- Run this block if customer is searched using customer id. -->
+                    {% elif search_type == 'show_by_id' %}
+                        <tr>
+                            <td>{{data.id}}</td>
+                            <td>{{data.first_name}}</td>
+                            <td>{{data.last_name}}</td>
+                            <td>{{data.email}}</td>
+                            <td>{{data.gender}}</td>
+                            <td>{{data.company}}</td>
+                            <td>{{data.city}}</td>
+                            <td>{{data.title}}</td>
+                            <td>{{data.lat}}</td>
+                            <td>{{data.lon}}</td>
+                        </tr>    
+                    {% endif %} 
+            </table>
+        </div>
+    </div>
+   
+</body>
+</html>
