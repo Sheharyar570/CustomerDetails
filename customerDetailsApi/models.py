@@ -12,7 +12,7 @@ class Customers(models.Model):
     company     = models.TextField()
     city        = models.TextField()
     title       = models.TextField()
-    lon         = models.TextField(default="0", null=True)
+    lng         = models.TextField(default="0", null=True)
     lat         = models.TextField(default="0", null=True)
 
     def __str__(self):

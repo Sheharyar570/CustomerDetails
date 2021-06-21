@@ -15,6 +15,6 @@ class CustomersSerializers(serializers.ModelSerializer):
             'company',
             'city',
             'title',
-            'lon',
+            'lng',
             'lat',
         )
