@@ -12,6 +12,6 @@ A Simple Web page is created to consume the API.
 - Got the folder where you have extracted the downloaded file.
 - Open cmd and run the below command.
 
-'''
+```
 docker-compose run web python manage.py migrate
-'''
+```
