@@ -1,4 +1,3 @@
-from django.db.models import query
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -7,12 +6,8 @@ from .serializers import CustomersSerializers
 
 
 class CustomersAll(APIView):
-    '''API endpoint (customers/all) retreives 
-    customers from database and returns the response
-    '''
-
     def get(self, request, *args, **kwargs):
-        '''Handles Get request'''
+        '''API endpoint retreives customers from database and returns the response'''
 
         try:
             query_set = Customers.objects.all()
@@ -24,12 +19,10 @@ class CustomersAll(APIView):
 
 
 class CustomerByID(APIView):
-    '''API endpoint (customers/<int:<customer_id>) retreives 
-    customer using customer_id from database and returns the response
-    '''
-
     def get(self, request, *args, **kwargs):
-        '''Handles Get request'''
+        '''API endpoint retreives customer using customer_id 
+        from database and returns the response
+        '''
 
         try:
             query_set = Customers.objects.get(id=kwargs['customer_id'])
