@@ -41,7 +41,7 @@
                     <th>Latitude</th>
                     <th>Longitude</th>
                 </tr>
-                    <!-- Run this block if Show All button is clicked. -->
+                  <!--  Run this block if Show All button is clicked. -->
                     {% if search_type == 'show_all' %}
                         {% for customer in data %}
                             <tr>
@@ -54,7 +54,7 @@
                                 <td>{{customer.city}}</td>
                                 <td>{{customer.title}}</td>
                                 <td>{{customer.lat}}</td>
-                                <td>{{customer.lon}}</td>
+                                <td>{{customer.lng}}</td>
                             </tr>    
                         {% endfor %}
 
@@ -70,7 +70,7 @@
                             <td>{{data.city}}</td>
                             <td>{{data.title}}</td>
                             <td>{{data.lat}}</td>
-                            <td>{{data.lon}}</td>
+                            <td>{{data.lng}}</td>
                         </tr>    
                     {% endif %} 
             </table>
