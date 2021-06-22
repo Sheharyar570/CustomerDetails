@@ -14,8 +14,17 @@ A Simple Web page is created to consume the API.
 
 ```
 docker-compose build
+```
+
+```
 docker-compose run web python manage.py migrate
+```
+
+```
 docker-compose run web python manage.py importcustomerdetails customers.csv
+```
+
+```
 docker-compose up
 ```
 ### Installation Instruction.
@@ -30,11 +39,15 @@ docker-compose up
 ```
 # install required libraries
 pip install -r requirements.txt
+```
+```
 python manage.py migrate
-
+```
+```
 # Import customer data from csv
 python manage.py importcustomerdetails customers.csv
-
+```
+```
 # Run server
 python manage.py runserver
 ```
