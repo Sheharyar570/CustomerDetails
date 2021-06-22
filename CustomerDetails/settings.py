@@ -146,4 +146,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GOOGLE_MAPS_API_KEY = 'AIzaSyAYsgHKOC6jgJXKONHiKJDTgKEGn_qJ6xg'
+GOOGLE_MAPS_API_KEY = 'AIzaSyA9BSjWF_WuY26T2-ojSeTSN1eE_YPwRzg'
