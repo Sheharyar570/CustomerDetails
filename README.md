@@ -6,6 +6,8 @@ A Django REST API with two endpoints. Can get customers data using the API.
 
 A Simple Web page is created to consume the API.
 
+Note: If API key is not given. App would still work but latitude and longitudes field will be filled with -1
+
 ### Docker Installation Instruction.
 - Download zip or clone this repository.
 - Extract the zip to the folder (In case: Repo was downloaded)
