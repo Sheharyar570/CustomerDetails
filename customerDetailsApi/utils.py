@@ -12,7 +12,10 @@ def get_lat_long(address):
     query = re.sub('[^A-Za-z0-9 ]+', '', address)
     query = query.replace(' ', '+')
     response = requests.get(f'https://maps.googleapis.com/maps/api/geocode/json?address={query}&key={GOOGLE_MAPS_API_KEY}')
-
+    
+    if response.json()['status'] == 'REQUEST_DENIED':
+        return -1, -1
+    
     if response.json()['status'] == 'ZERO_RESULTS':
         return -1, -1
 
