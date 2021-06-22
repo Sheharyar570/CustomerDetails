@@ -31,5 +31,5 @@ docker-compose up
 python manage.py migrate
 
 # Import customer data from csv
-python manage.py manage.py importcustomerdetails customers.csv
+python manage.py importcustomerdetails customers.csv
 ```
