@@ -18,7 +18,7 @@ Note: If API key is not given. App would still work but latitude and longitudes 
 GOOGLE_MAPS_API_KEY = 'PLACE_YOUR_API_KEY_HERE'
 ```
 
-- Open cmd and run the below commands in sequence.
+- Open cmd in the folder and run the below commands in sequence.
 
 ```
 docker-compose build
