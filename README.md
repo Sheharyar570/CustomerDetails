@@ -10,6 +10,12 @@ A Simple Web page is created to consume the API.
 - Download zip or clone this repository.
 - Extract the zip to the folder (In case: Repo was downloaded)
 - Got the folder where you have extracted the downloaded file.
+- Place your Google Maps API key in CustomerDetails/settings.py at line 140
+
+```
+GOOGLE_MAPS_API_KEY = 'PLACE_YOUR_API_KEY_HERE'
+```
+
 - Open cmd and run the below commands in sequence.
 
 ```
@@ -32,22 +38,58 @@ docker-compose up
 - Install postgres and setup postgres with default username and password=admin123
 - Download zip or clone this repository.
 - Extract the zip to the folder (In case: Repo was downloaded)
-- Got the folder where you have extracted the downloaded file.
+- Go to the folder where you have extracted the downloaded file.
+- Place your Google Maps API key in CustomerDetails/settings.py at line 140
+
+```
+GOOGLE_MAPS_API_KEY = 'PLACE_YOUR_API_KEY_HERE'
+```
+
+- Change CustomerDetails/settings.py file
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'customers',
+        'USER': 'postgres',
+        'HOST': 'db',
+        'PASSWORD': 'mustard@846#',
+        'PORT': '5432'
+    }
+}
+```
+
+TO
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'customers',
+        'USER': 'postgres',
+        'HOST': 'localhost',
+        'PASSWORD': 'admin123',
+        'PORT': '5432'
+    }
+}
+
+```
+
 - Open cmd and run the below commands in sequence.
 
 
 ```
-# install required libraries
 pip install -r requirements.txt
 ```
+
 ```
 python manage.py migrate
 ```
+
 ```
-# Import customer data from csv
 python manage.py importcustomerdetails customers.csv
 ```
 ```
-# Run server
 python manage.py runserver
 ```
