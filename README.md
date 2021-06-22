@@ -28,8 +28,13 @@ docker-compose up
 
 
 ```
+# install required libraries
+pip install -r requirements.txt
 python manage.py migrate
 
 # Import customer data from csv
 python manage.py importcustomerdetails customers.csv
+
+# Run server
+python manage.py runserver
 ```
